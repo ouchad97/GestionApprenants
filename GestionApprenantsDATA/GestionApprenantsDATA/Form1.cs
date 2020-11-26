@@ -38,7 +38,7 @@ namespace GestionApprenantsDATA
 
             pays.DataSource = new[] { "Maroc", "France", "Espagne" };
             specialite.DataSource = new[] { "C#", "JEE", "FEBE" };
-            filtr.DataSource = new[] {"","C#", "JEE", "FEBE" };
+            filtr.DataSource = new[] {"Les specialite","C#", "JEE", "FEBE" };
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e){
@@ -281,7 +281,7 @@ namespace GestionApprenantsDATA
                 string req5;
                 string fltr = filtr.Text;
             try{
-                if (filtr.Text == ""){
+                if (filtr.Text == "Les specialite"){
                      req5 = "select * from Apprenant";
                 }
                 else{req5 = "select * from Apprenant where specialite='" + fltr + "'";}
