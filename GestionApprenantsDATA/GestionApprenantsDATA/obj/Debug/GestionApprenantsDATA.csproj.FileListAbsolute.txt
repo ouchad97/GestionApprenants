@@ -1,0 +1,9 @@
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\bin\Debug\GestionApprenantsDATA.exe.config
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\bin\Debug\GestionApprenantsDATA.exe
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\bin\Debug\GestionApprenantsDATA.pdb
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\obj\Debug\GestionApprenantsDATA.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\obj\Debug\GestionApprenantsDATA.Form1.resources
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\obj\Debug\GestionApprenantsDATA.Properties.Resources.resources
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\obj\Debug\GestionApprenantsDATA.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\obj\Debug\GestionApprenantsDATA.exe
+C:\Users\Admin\Desktop\GestionApprenants\GestionApprenantsDATA\GestionApprenantsDATA\obj\Debug\GestionApprenantsDATA.pdb
