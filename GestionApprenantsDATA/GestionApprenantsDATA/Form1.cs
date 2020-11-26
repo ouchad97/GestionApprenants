@@ -25,8 +25,7 @@ namespace GestionApprenantsDATA
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+        private void Form1_Load(object sender, EventArgs e) {
             Declaration.connecte();
             string req = "select * from Apprenant";
             Declaration.select(req);
@@ -37,18 +36,15 @@ namespace GestionApprenantsDATA
 
             ID.Enabled = false;
 
-            pays.DataSource = new[]{"Maroc","France","Espagne"};
-            specialite.DataSource = new[] {"C#","JEE","FEBE"};
+            pays.DataSource = new[] { "Maroc", "France", "Espagne" };
+            specialite.DataSource = new[] { "C#", "JEE", "FEBE" };
+            filtr.DataSource = new[] {"","C#", "JEE", "FEBE" };
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e){
 
-            if (e.RowIndex >= 0)
-            {
-                //gets a collection that contains all the rows
+            if (e.RowIndex >= 0){
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                //populate the textbox from specific value of the coordinates of column and row.
                 ID.Text = row.Cells[0].Value.ToString();
                 nom.Text = row.Cells[1].Value.ToString();
                 prenom.Text = row.Cells[2].Value.ToString();
@@ -143,18 +139,15 @@ namespace GestionApprenantsDATA
                     //this.Close();
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 MessageBox.Show(ex.Message);
             }
 
         }
 
-        private void pays_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void pays_SelectedIndexChanged(object sender, EventArgs e){
             //combobox ville 
-            if (pays.SelectedItem.ToString() == "Maroc")
-            {
+            if (pays.SelectedItem.ToString() == "Maroc"){
                 ville.Items.Clear();
                 ville.Items.Add("Rabat");
                 ville.Items.Add("Casablanca");
@@ -163,9 +156,7 @@ namespace GestionApprenantsDATA
                 ville.Items.Add("Agadir");
             }
             else
-            {
-                if (pays.SelectedItem.ToString() == "France")
-                {
+            {{
                     ville.Items.Clear();
                     ville.Items.Add("Marseille");
                     ville.Items.Add("Bordeaux");
@@ -174,8 +165,7 @@ namespace GestionApprenantsDATA
                     ville.Items.Add("Paris");
                 }
 
-                if (pays.SelectedItem.ToString() == "Espagne")
-                {   ville.Items.Clear();
+                if (pays.SelectedItem.ToString() == "Espagne"){   ville.Items.Clear();
                     ville.Items.Add("Barcelona");
                     ville.Items.Add("Seville");
                     ville.Items.Add("Madrid");
@@ -185,35 +175,29 @@ namespace GestionApprenantsDATA
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        private void button2_Click(object sender, EventArgs e){
             Declaration.connecte();
             try{
                 string req2 = "update Apprenant set nom='" + nom.Text + "',prenom='" + prenom.Text + "',email='" + email.Text + "',telephone=" + phone.Text + ",adresse='" + adresse.Text + "',pays='" + pays.Text + "',ville='" + ville.Text + "',specialite='" + specialite.Text + "' where IdAp=" + ID.Text;
-            Declaration.cmd = new SqlCommand(req2, Declaration.cn);
+                Declaration.cmd = new SqlCommand(req2, Declaration.cn);
 
 
             //Nom Regex
-            if (string.IsNullOrEmpty(nom.Text))
-            {
+            if (string.IsNullOrEmpty(nom.Text)){
                 errorProvider1.SetError(nom, "Le nom est obligatoire!");
                 i = 0;
             }
-            else if (!rNom.IsMatch(nom.Text))
-            {
+            else if (!rNom.IsMatch(nom.Text)){
                 errorProvider1.SetError(nom, "Le nom n'est pas correct");
                 i = 0;
             }
 
 
             //Prenom Regex
-            if (string.IsNullOrEmpty(nom.Text))
-            {
+            if (string.IsNullOrEmpty(nom.Text)){
                 errorProvider1.SetError(nom, "Le Prenom est obligatoire!");
                 i = 0;
-            }
-            else if (!rPrenm.IsMatch(nom.Text))
-            {
+            }else if (!rPrenm.IsMatch(nom.Text)) {
                 errorProvider1.SetError(nom, "Le Prenom n'est pas correct");
                 i = 0;
             }
@@ -221,58 +205,44 @@ namespace GestionApprenantsDATA
 
 
             //Email Regex
-            if (string.IsNullOrEmpty(email.Text))
-            {
+            if (string.IsNullOrEmpty(email.Text)){
                 errorProvider1.SetError(email, "Email est obligatoire!");
                 i = 0;
-            }
-            else if (!rEMail.IsMatch(email.Text))
-            {
+            }else if (!rEMail.IsMatch(email.Text)){
                 errorProvider1.SetError(email, "Email n'est pas correct");
                 i = 0;
             }
 
 
             //Tel Regex
-            if (string.IsNullOrEmpty(phone.Text))
-            {
+            if (string.IsNullOrEmpty(phone.Text)){
                 errorProvider1.SetError(phone, "Phone est obligatoire!");
                 i = 0;
-            }
-            else if (!rTEL.IsMatch(phone.Text))
-            {
+            }else if (!rTEL.IsMatch(phone.Text)){
                 errorProvider1.SetError(phone, "Phone n'est pas correct");
                 i = 0;
             }
 
 
             //AJOUT
-            if ((rPrenm.IsMatch(nom.Text)) && (rNom.IsMatch(prenom.Text)) && (rEMail.IsMatch(email.Text)) && (rTEL.IsMatch(phone.Text)))
-            {
+            if ((rPrenm.IsMatch(nom.Text)) && (rNom.IsMatch(prenom.Text)) && (rEMail.IsMatch(email.Text)) && (rTEL.IsMatch(phone.Text))){
                 errorProvider1.SetError(nom, null);
                 errorProvider1.SetError(prenom, null);
                 errorProvider1.SetError(email, null);
                 errorProvider1.SetError(phone, null);
                 i = Declaration.cmd.ExecuteNonQuery();
             }
-
-            if (i == 1)
-            {
+            if (i == 1) {
                 MessageBox.Show("Modification effectué avec succès");
-
                 Declaration.deconnecte();
-                //dataGridView1.Refresh();
-                //this.Close();
             }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
+        private void button3_Click(object sender, EventArgs e){
             string req3 = "delete from Apprenant where IdAp=" + ID.Text;
 
             try {
@@ -284,16 +254,15 @@ namespace GestionApprenantsDATA
                     this.Close();
                 }else{
                     MessageBox.Show("Element supprimer");
+                    Declaration.deconnecte();
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
+        private void button5_Click(object sender, EventArgs e){
             try {
                 Declaration.connecte();
                 string req4 = "SELECT COUNT(IdAp)FROM Apprenant";
@@ -302,11 +271,28 @@ namespace GestionApprenantsDATA
                 dt.Load(Declaration.dr);
                 MessageBox.Show("Nombre des apprenants est :"+dt.Rows[0][0].ToString());
                 Declaration.deconnecte();
-
-
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void filtr_SelectedIndexChanged(object sender, EventArgs e){
+                string req5;
+                string fltr = filtr.Text;
+            try{
+                if (filtr.Text == ""){
+                     req5 = "select * from Apprenant";
+                }
+                else{req5 = "select * from Apprenant where specialite='" + fltr + "'";}
+                Declaration.connecte();
+                Declaration.select(req5);
+                dt = new DataTable();
+                dt.Load(Declaration.dr);
+                dataGridView1.DataSource = dt;
+                Declaration.deconnecte();
+            }
+            catch (Exception ex){
                 MessageBox.Show(ex.Message);
             }
         }

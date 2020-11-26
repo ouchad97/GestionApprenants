@@ -15,6 +15,7 @@ create table Apprenant(	IdAp int IDENTITY(1,1) PRIMARY KEY,
 
 						SELECT COUNT(IdAp)FROM Apprenant
 
+						select * from Apprenant where specialite='JEE'
 
 insert into Apprenant values('Houssni','Ouchad','email@email.com','066666666','Boualam safi','Maroc','Safi','JEE')
 insert into Apprenant values('Adil','Samid','email@email.com','066666666','Boualam safi','Maroc','Safi','JEE')

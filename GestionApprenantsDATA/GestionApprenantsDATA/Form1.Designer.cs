@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nom = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,26 +55,28 @@
             this.specialite = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.button5 = new System.Windows.Forms.Button();
+            this.filtr = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 89);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1263, 181);
+            this.dataGridView1.Size = new System.Drawing.Size(1263, 152);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // nom
             // 
-            this.nom.Location = new System.Drawing.Point(173, 291);
+            this.nom.Location = new System.Drawing.Point(173, 314);
             this.nom.Name = "nom";
             this.nom.Size = new System.Drawing.Size(229, 22);
             this.nom.TabIndex = 1;
@@ -82,7 +84,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(113, 296);
+            this.label1.Location = new System.Drawing.Point(113, 319);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 2;
@@ -91,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(466, 296);
+            this.label2.Location = new System.Drawing.Point(466, 319);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 14;
@@ -99,7 +101,7 @@
             // 
             // prenom
             // 
-            this.prenom.Location = new System.Drawing.Point(546, 291);
+            this.prenom.Location = new System.Drawing.Point(546, 314);
             this.prenom.Name = "prenom";
             this.prenom.Size = new System.Drawing.Size(224, 22);
             this.prenom.TabIndex = 13;
@@ -107,7 +109,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(113, 364);
+            this.label4.Location = new System.Drawing.Point(113, 380);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 17);
             this.label4.TabIndex = 18;
@@ -115,7 +117,7 @@
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(173, 359);
+            this.email.Location = new System.Drawing.Point(173, 375);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(375, 22);
             this.email.TabIndex = 17;
@@ -166,7 +168,7 @@
             // 
             // adresse
             // 
-            this.adresse.Location = new System.Drawing.Point(838, 359);
+            this.adresse.Location = new System.Drawing.Point(838, 375);
             this.adresse.Name = "adresse";
             this.adresse.Size = new System.Drawing.Size(333, 22);
             this.adresse.TabIndex = 27;
@@ -174,7 +176,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(744, 362);
+            this.label5.Location = new System.Drawing.Point(744, 378);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 28;
@@ -223,7 +225,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(835, 296);
+            this.label3.Location = new System.Drawing.Point(835, 319);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 34;
@@ -231,14 +233,14 @@
             // 
             // phone
             // 
-            this.phone.Location = new System.Drawing.Point(947, 291);
+            this.phone.Location = new System.Drawing.Point(947, 314);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(224, 22);
             this.phone.TabIndex = 33;
             // 
             // ID
             // 
-            this.ID.Location = new System.Drawing.Point(623, 240);
+            this.ID.Location = new System.Drawing.Point(623, 262);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(77, 22);
             this.ID.TabIndex = 35;
@@ -246,7 +248,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(543, 245);
+            this.label9.Location = new System.Drawing.Point(543, 267);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 17);
             this.label9.TabIndex = 36;
@@ -274,11 +276,31 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // filtr
+            // 
+            this.filtr.FormattingEnabled = true;
+            this.filtr.Location = new System.Drawing.Point(546, 36);
+            this.filtr.Name = "filtr";
+            this.filtr.Size = new System.Drawing.Size(232, 24);
+            this.filtr.TabIndex = 39;
+            this.filtr.SelectedIndexChanged += new System.EventHandler(this.filtr_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(404, 39);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(127, 17);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Filter par spécialité";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 575);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.filtr);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.specialite);
             this.Controls.Add(this.label9);
@@ -340,6 +362,8 @@
         private System.Windows.Forms.ComboBox specialite;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox filtr;
     }
 }
 
