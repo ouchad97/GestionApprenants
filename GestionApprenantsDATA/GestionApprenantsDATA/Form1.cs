@@ -300,7 +300,7 @@ namespace GestionApprenantsDATA
                 Declaration.select(req4);
                 dt = new DataTable();
                 dt.Load(Declaration.dr);
-                MessageBox.Show(dt.Rows[0][0].ToString());
+                MessageBox.Show("Nombre des apprenants est :"+dt.Rows[0][0].ToString());
                 Declaration.deconnecte();
 
 
